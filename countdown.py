@@ -8,8 +8,8 @@ while True:
   except ValueError:
     print('Invalid input! Must be integer!')
   
-for i in range(0,wait):
+for i in range(wait,0,-1):
   print(i)
   time.sleep(1)
 
-playsound("alarm.mp3")
+playsound.playsound("./alarm.mp3")

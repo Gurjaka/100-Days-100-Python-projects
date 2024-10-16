@@ -1,14 +1,13 @@
 import random
 
-pass_str = input("Choose the password level, Low, Medium, or High : ")
-pass_str = pass_str.lower()
-
 set1 = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 set2 = "1234567890"
 set3 = "!@#$%&*-=_+`"
 charset = ""
 
 while True:
+    pass_str = input("Choose the password level, Low, Medium, or High : ")
+    pass_str = pass_str.lower()
     match pass_str:
       case "low":
         charset = set1
@@ -17,7 +16,7 @@ while True:
       case "high":
         charset = set1 + set2 + set3
       case _:
-        pass_str = input("Incorrect option. Choose the password level, Low, Medium, or High : ")
+        print("Incorrect option!!!")
         continue
     break
 
@@ -32,11 +31,9 @@ while True:
         print("Invalid input! Must be numbers!")
 
 back = ""
-while pass_len > 0:
+for i in range(pass_len):
     chars = random.randint(0,len(charset))
     back = back + charset[chars]
-    pass_len = pass_len - 1
 
 password = back
-
 print(password)
